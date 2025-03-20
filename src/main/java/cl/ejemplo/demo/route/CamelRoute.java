@@ -6,6 +6,20 @@ import org.apache.camel.model.rest.RestBindingMode;
 import org.springframework.stereotype.Component;
 import java.util.Map;
 
+/**
+ * Clase CamelRoute - Configura y maneja un servicio REST con Apache Camel con component servlet.
+ * Esta clase define una ruta Camel que responde a solicitudes GET en el endpoint "/api/hello".
+ *
+ * Autor: @dapavez
+ * Fecha de Creación: Marzo 2025
+ * Versión: 1.0
+ * Descripción:
+ *  Esta clase utiliza Apache Camel para crear una API REST básica que responde con un mensaje estático en formato texto plano.
+ *
+ * Historial de Modificaciones:
+ *  - [Fecha] - Descripción de cambios o mejoras realizadas
+ *  
+ */
 @Component
 public class CamelRoute extends RouteBuilder {
 
