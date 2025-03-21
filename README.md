@@ -1,44 +1,77 @@
-# demo-apache-camel-servlet
+# 🚀 API REST con Apache Camel y OpenAPI
 
-Este es un proyecto de ejemplo que utiliza **Apache Camel** con **Spring Boot 3.4.3** y el componente **Servlet** para exponer un servicio REST simple.
+Este proyecto implementa una API REST utilizando **Apache Camel** y **Spring Boot**, con documentación generada automáticamente mediante **OpenAPI** y **Springdoc**.
 
 ## 📌 Descripción
 
-La aplicación proporciona un endpoint REST `/api/hello` que devuelve un mensaje en formato JSON.
+La API expone un endpoint REST `/api/hello` que responde a solicitudes `GET`, devolviendo un mensaje en `text/plain`. La documentación se genera de forma automática y está disponible en:
 
-## ⚙️ Requisitos previos
+- **Swagger UI**: [`http://localhost:8080/swagger-ui/index.html`](http://localhost:8080/swagger-ui/index.html)
+- **Especificación OpenAPI**: [`http://localhost:8080/api-docs`](http://localhost:8080/api-docs)
 
-- **Java 17** o superior
-- **Maven 3.8+**
+## 🛠️ Tecnologías
 
-## 🚀 Ejecución del Proyecto
+- **Java 11+**
+- **Spring Boot 3.4.3**
+- **Apache Camel**
+- **OpenAPI con Springdoc**
+- **camel-openapi-java**
 
-Puedes ejecutar la aplicación directamente desde tu IDE (IntelliJ, Eclipse, VS Code) o con el siguiente comando en la terminal:
+## 📦 Instalación
 
-```sh
+### 1️⃣ Clonar el repositorio
+
+```bash
+git clone https://github.com/mcdilan/demo-apache-camel.git
+cd demo-apache-camel
+```
+
+### 2️⃣ Construir el proyecto
+
+```bash
+mvn clean install
+```
+
+### 3️⃣ Ejecutar la aplicación
+
+```bash
 mvn spring-boot:run
 ```
 
-## 📡 Endpoints disponibles
+## 🔥 Endpoints
 
-| Método | Endpoint     | Descripción                        |
-|--------|------------|--------------------------------|
-| GET    | `/api/hello` | Retorna un mensaje de saludo en JSON |
+| Método | URL          | Descripción                                 |
+| ------ | ------------ | ------------------------------------------- |
+| `GET`  | `/api/hello` | Retorna un mensaje de saludo en texto plano |
 
-## 📄 Ejemplo de respuesta
+## 📖 Documentación API
 
-```json
-{
-  "mensaje": "¡Hola Mundo con Spring Boot 3.4.3 y Apache Camel usando Servlet!"
-}
-```
+Esta API utiliza **Springdoc OpenAPI** y **camel-openapi-java** para generar documentación dinámica.
 
-## 📌 Notas
+📌 **Acceder a la documentación:**
 
-- No se ha implementado autenticación ni documentación con Swagger.
-- Se utiliza el componente **Servlet** en lugar de otros como Jetty o Undertow.
-- Se puede modificar la configuración en `CamelRoute.java`.
+- Swagger UI: [`http://localhost:8080/swagger-ui/index.html`](http://localhost:8080/swagger-ui/index.html)
+- Especificación OpenAPI (JSON): [`http://localhost:8080/api-docs`](http://localhost:8080/api-docs)
 
----
+## 🏗️ Arquitectura
 
-¡Listo para probar 🚀! Si tienes dudas o quieres mejorar el proyecto, puedes modificar las rutas en `CamelRoute.java`.
+📌 **Configuración de Apache Camel:**
+
+- Se utiliza `servlet` como componente REST.
+- Se define el contexto base `/api`.
+- Se habilita CORS y se configura el modo JSON para las respuestas.
+
+📌 **Definición de rutas:**
+
+- `` → Redirige a `direct:helloRoute`, que retorna un mensaje fijo.
+
+📌 **Documentación OpenAPI:**
+
+- Definida en `CamelRoute.java` con propiedades como título, versión, contacto y licencia.
+
+## 📧 Contacto
+
+**Autor:** dapavez\
+📩 Email: [dapavez@sernapesca.cl](mailto\:dapavez@sernapesca.cl)
+
+servlet
